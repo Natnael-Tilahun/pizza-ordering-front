@@ -7,13 +7,14 @@ import {
   CardMedia,
   CardContent,
   Button,
+  List,
 } from "@mui/material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function FeaturedCards() {
-  const [currentSlide, setCurrentSlide] = useState(0); // State for current slide
+  const [currentSlide, setCurrentSlide] = useState<number>(0); // State for current slide
 
   const settings = {
     dots: true,
@@ -21,8 +22,8 @@ export default function FeaturedCards() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    beforeChange: (current, next) => setCurrentSlide(next),
-    appendDots: (dots) => (
+    beforeChange: (current: number, next: number) => setCurrentSlide(next),
+    appendDots: (dots: React.ReactNode) => (
       <div
         style={{
           display: "flex",
@@ -30,18 +31,18 @@ export default function FeaturedCards() {
           alignItems: "center",
         }}
       >
-        <ul
-          style={{
+        <List
+          sx={{
             margin: "0px",
             display: "flex",
             gap: { xs: "14px", md: "25px" },
           }}
         >
           {dots}
-        </ul>
+        </List>
       </div>
     ),
-    customPaging: (i) => (
+    customPaging: (i: number) => (
       <Box
         sx={{
           width: { xs: "13px", md: "25px" },
@@ -84,7 +85,7 @@ export default function FeaturedCards() {
   return (
     <Box
       sx={{
-        paddingTop: { xs: "40px", md: "65px" },
+        paddingTop: { xs: "40px", md: "65px", xl: "0px" },
         paddingBottom: { xs: "50px", md: "100px" },
         paddingInline: { xs: "10px", md: "87px" },
         width: "100%",
@@ -105,11 +106,12 @@ export default function FeaturedCards() {
           <Card
             key={index}
             sx={{
-              height: { xs: "205px", md: "386px" },
+              height: { xs: "205px", md: "fit-content", xl: "386px" },
               backgroundColor: item.bannerColor,
               borderRadius: { xs: "15px", md: "40px" },
               display: "flex",
               alignItems: "center",
+              border: "2px solid red",
             }}
           >
             <Box

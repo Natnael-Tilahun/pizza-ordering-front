@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "./components/Header";
-import { Box, Toolbar } from "@mui/material";
+import { Box } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
@@ -38,7 +38,7 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           type="text/css"
-          charset="UTF-8"
+          charSet="UTF-8"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
         />
         <link
@@ -52,7 +52,7 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <Header />
             <Box sx={{ py: 0, bgcolor: "#FFF8F1" }}>
-              <Toolbar />
+              {/* <Toolbar /> */}
               {children}
             </Box>
             <Footer />

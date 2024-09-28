@@ -48,7 +48,7 @@ export const Hero = () => {
             variant={"h1"}
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "50px", md: "150px" },
+              fontSize: { xs: "50px", md: "75px", xl: "150px" },
               background:
                 "linear-gradient(90.23deg, #FF8100 -2.97%, #FFBE71 93.66%)",
               backgroundClip: "text",
@@ -122,7 +122,7 @@ export const Hero = () => {
         </FormControl>
       </Box>
 
-      <Box className="absolute right-0 top-0 w-[100px] h-full md:w-[150px] md:h-[300px] lg:w-[350px] lg:h-[800px]">
+      <Box className="absolute right-0 top-0 w-[100px] h-full md:w-[150px] md:h-[300px] lg:w-[200px] lg:h-[500px] xl:w-[350px] xl:h-[800px]">
         <Image
           src="/image.png"
           alt="hero"
@@ -144,7 +144,7 @@ export const Hero = () => {
             objectFit: "contain",
             position: "absolute",
           }}
-          className="ld:bottom-[7%] md:bottom-[0%] bottom-[10%] right-[30%] md:right-[55%] md:w-[100px] md:h-[110px] lg:w-[214px] lg:h-[239px]"
+          className="xl:bottom-[7%] md:bottom-[0%] bottom-[10%] right-[30%] md:right-[55%] lg:bottom-[0%] lg:right-[45%] md:w-[100px] md:h-[110px] lg:w-[214px] lg:h-[239px]"
           priority
         />
         <Image
@@ -158,7 +158,7 @@ export const Hero = () => {
             gap: "0px",
             opacity: "0px",
           }}
-          className="lg:top-[20%] top-[16%] md:top-[10%] right-[57%] lg:right-[80%] md:right-[75%] md:w-[100px] md:h-[100px] lg:w-[214px] lg:h-[239px]"
+          className="xl:top-[20%] top-[16%] md:top-[10%] right-[57%] lg:top-[5%] lg:right-[70%] xl:right-[80%] md:right-[75%] md:w-[100px] md:h-[100px] lg:w-[214px] lg:h-[239px]"
           priority
         />
       </Box>

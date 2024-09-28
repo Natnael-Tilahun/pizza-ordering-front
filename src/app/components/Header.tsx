@@ -31,25 +31,33 @@ export const Header = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Image
-        src="/logo.png"
-        alt="Pizza Ordering App"
-        width={100}
-        height={100}
-        style={{ objectFit: "contain" }}
-      />
+    <Box onClick={handleDrawerToggle} sx={{ px: "20px" }}>
+      <Box
+        sx={{
+          height: "65px",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Image
+          src="/logo.png"
+          alt="Pizza Ordering App"
+          width={100}
+          height={100}
+          style={{ objectFit: "contain" }}
+        />
+      </Box>
       <Divider />
       <List
         sx={{
           display: "flex",
           flexDirection: "column",
           gap: "20px",
-          py: "40px",
+          py: "20px",
         }}
       >
         {navItems.map((item) => (
-          <Link href={item.path} key={item.path}>
+          <Link className="text-left" href={item.path} key={item.path}>
             {item.name}
           </Link>
         ))}
@@ -57,7 +65,12 @@ export const Header = () => {
       <Button
         variant="contained"
         size="small"
-        sx={{ color: "white", fontWeight: "bold", fontSize: "25px" }}
+        sx={{
+          color: "white",
+          fontWeight: "bold",
+          fontSize: "25px",
+          width: "100%",
+        }}
       >
         Register
       </Button>
@@ -65,14 +78,19 @@ export const Header = () => {
   );
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{
+        display: "flex",
+      }}
+    >
       <CssBaseline />
       <AppBar
         component="nav"
         sx={{
           bgcolor: "#FFF8F1",
-          height: "75px",
-          boxShadow: "0px 0px 15px 0px #FF810033",
+          boxShadow: "none",
+          position: "static",
+          width: "100%",
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -108,7 +126,6 @@ export const Header = () => {
           <Box>
             <Button
               variant="contained"
-              // size=""
               sx={{
                 color: "white",
                 fontWeight: "bold",

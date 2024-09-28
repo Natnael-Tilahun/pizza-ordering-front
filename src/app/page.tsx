@@ -16,9 +16,8 @@ export default function Home() {
             flexDirection: "column",
             alignItems: "start",
             position: "relative",
-            border: "4px solid red",
             width: "100%",
-            // height: "100%", // Removed to prevent unnecessary space
+            height: "100%",
           }}
         >
           <Hero />

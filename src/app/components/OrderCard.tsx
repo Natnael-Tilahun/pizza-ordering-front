@@ -1,17 +1,10 @@
 import React from "react";
 import { Card, CardMedia, Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
+import { Pizza } from "@/types";
 
 type Props = {
-  item: {
-    id: string;
-    src: string;
-    title: string;
-    description: string;
-    price: number;
-    restaurantLogo: string;
-    restaurantName: string;
-  };
+  item: Pizza;
 };
 
 export default function OrderCard({ item }: Props) {
@@ -32,7 +25,7 @@ export default function OrderCard({ item }: Props) {
         component="img"
         height="100%"
         width="100%"
-        image={item.src}
+        image={item.src[0]}
         alt="featured pizza"
         sx={{
           width: "100%",
@@ -82,12 +75,13 @@ export default function OrderCard({ item }: Props) {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            gap: "31px",
           }}
         >
           <Typography
             variant="body2"
             sx={{
-              fontSize: { xs: "30px", md: "45px" },
+              fontSize: { xs: "30px", lg: "45px" },
               opacity: 0.7,
               color: "#01C550",
               fontWeight: "bold",
@@ -99,21 +93,49 @@ export default function OrderCard({ item }: Props) {
             }}
           >
             {item.price}
-            <p className="text-sm text-black/75 self-start">Birr</p>
+            <span className="text-sm text-black/75 self-start">Birr</span>
           </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              width: { xs: "169px", md: "188px" },
-              height: { xs: "56px", md: "66px" },
-              color: "white",
-              fontSize: { xs: "25px", md: "32px" },
-              fontWeight: "bold",
-              borderRadius: "10px",
-            }}
-          >
-            Order
-          </Button>
+          {item.status == "Pending" ? (
+            <Typography
+              variant="body2"
+              sx={{
+                fontSize: "32px",
+                lineHeight: "47px",
+                letterSpacing: "3%",
+                fontWeight: "bold",
+                color: "#FFA500",
+              }}
+            >
+              Ordered
+            </Typography>
+          ) : item.status == "Delivered" ? (
+            <Typography
+              variant="body2"
+              sx={{
+                fontSize: "32px",
+                lineHeight: "47px",
+                letterSpacing: "3%",
+                fontWeight: "bold",
+                color: "#008000",
+              }}
+            >
+              Received
+            </Typography>
+          ) : (
+            <Button
+              variant="contained"
+              sx={{
+                width: { xs: "169px", lg: "188px" },
+                height: { xs: "56px", lg: "66px" },
+                color: "white",
+                fontSize: { xs: "25px", lg: "32px" },
+                fontWeight: "bold",
+                borderRadius: "10px",
+              }}
+            >
+              Order
+            </Button>
+          )}
         </Box>
       </Box>
       <hr className="bg-[#00000033] w-full" />
@@ -123,6 +145,7 @@ export default function OrderCard({ item }: Props) {
           alignItems: "center",
           justifyContent: "space-between",
           width: "100%",
+          gap: "37px",
         }}
       >
         <Box
