@@ -11,7 +11,7 @@ import Image from "next/image";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import YoutubeIcon from "@mui/icons-material/Youtube";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 export const Footer = () => {
   const navItems = [
@@ -165,7 +165,7 @@ export const Footer = () => {
             />
           </Link>
           <Link href="/">
-            <YoutubeIcon
+            <YouTubeIcon
               sx={{ color: "white", width: "24px", height: "24px" }}
             />
           </Link>
