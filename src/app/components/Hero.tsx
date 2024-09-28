@@ -125,7 +125,7 @@ export const Hero = () => {
       <Box className="absolute right-0 top-0 w-[100px] h-full md:w-[150px] md:h-[300px] lg:w-[200px] lg:h-[500px] xl:w-[350px] xl:h-[800px]">
         <Image
           src="/image.png"
-          alt="hero"
+          alt="image on hero section"
           layout="fill"
           style={{
             objectFit: "contain",
