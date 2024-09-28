@@ -38,34 +38,38 @@ body {
 }
 
 .top-restaurants .slick-slide {
-  margin-inline: 0 30px;
-  border: 2px solid green;
+  padding-right: 25px;
+  overflow: hidden;
+  height: fit-content;
 }
 
 .top-restaurants .slick-list {
-  margin-inline: 0 -30px;
-  border: 2px solid red;
+  height: auto;
+  overflow: hidden;
+}
+
+
+
+@media (max-width: 768px) {
+  .top-restaurants .slick-slide {
+    margin-inline: 0px 5px;
+  }
+
+  .top-restaurants .slick-list {
+    margin-inline: -5px -5px;
+  }
 }
 
 @media (max-width: 580px) {
   .top-restaurants .slick-slide {
+    padding-inline: 0 0px;
+    margin-inline: 0 0px;
+  }
+
+  .top-restaurants .slick-list {
     margin-inline: 0px 0px;
+    padding-inline: 0px 0px;
   }
-
-  .top-restaurants .slick-list {
-    margin-inline: 0 5px;
-  }
-}
-
-@media (max-width: 768px) {
-  .top-restaurants .slick-slide {
-    margin-inline: 0px 10px;
-  }
-
-  .top-restaurants .slick-list {
-    margin-inline: 0 -10px;
-  }
-
 }
 
 @media (prefers-color-scheme: dark) {

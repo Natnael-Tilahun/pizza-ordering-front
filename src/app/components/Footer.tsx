@@ -32,7 +32,7 @@ export const Footer = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: "end",
           backgroundColor: "#CCB691",
           width: "100%",
           px: { xs: "23px", md: "64px" },
@@ -43,7 +43,7 @@ export const Footer = () => {
         <List
           sx={{
             display: "flex",
-            gap: "20px",
+            gap: { xs: "13px", md: "50px" },
             width: "100%",
             flexDirection: { xs: "column", md: "row" },
             fontSize: { xs: "15px", md: "25px" },
@@ -148,7 +148,7 @@ export const Footer = () => {
           <Typography>@2024 Pizza All Rights Reserved.</Typography>
           <Link href="/">Terms & Conditions</Link>
         </Box>
-        <List sx={{ display: "flex", gap: "10px" }}>
+        <List sx={{ display: "flex", gap: "14px" }}>
           <Link href="/">
             <FacebookIcon
               sx={{ color: "white", width: "24px", height: "24px" }}

@@ -11,16 +11,23 @@ export default function TopRestaurants() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 2.5,
+    slidesToScroll: 1,
     initialSlide: 0,
     arrows: false,
     responsive: [
       {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 1,
           infinite: true,
           dots: false,
         },
@@ -29,7 +36,7 @@ export default function TopRestaurants() {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -68,7 +75,7 @@ export default function TopRestaurants() {
     <Box
       sx={{
         paddingTop: { xs: "40px", md: "65px" },
-        paddingBottom: { xs: "50px", md: "100px" },
+        paddingBottom: { xs: "45px", md: "100px" },
         paddingInline: { xs: "10px", md: "50px" },
         width: "100%",
         background:
@@ -148,7 +155,6 @@ export default function TopRestaurants() {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "10px",
                   width: "100%",
                   px: { xs: "10px", md: "15px" },
                   py: { xs: "10px", md: "14px" },

@@ -5,22 +5,31 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import OrderCard from "./OrderCard";
+import { data } from "@/data";
 
 export default function Fasting() {
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 3.5,
+    slidesToScroll: 2,
     initialSlide: 0,
+    adaptiveHeight: true, // Added to adjust height based on active slide
     arrows: false,
     responsive: [
       {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3.5,
+          slidesToScroll: 2,
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2.5,
+          slidesToScroll: 2,
           infinite: true,
           dots: false,
         },
@@ -29,7 +38,7 @@ export default function Fasting() {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -43,70 +52,12 @@ export default function Fasting() {
     ],
   };
 
-  const data = [
-    {
-      id: "1",
-      src: "/pizza1.png",
-      title: "Margherita",
-      description: "Tomato, Mozzarella, Bell Peppers, Onions, Olives",
-      price: "150",
-      restaurantLogo: "/image1.png",
-      restaurantName: "Azmera Pizza",
-    },
-    {
-      id: "2",
-      src: "/pizza1.png",
-      title: "Margherita",
-      description: "Tomato, Mozzarella, Bell Peppers, Onions, Olives",
-      price: "150",
-      restaurantLogo: "/image1.png",
-      restaurantName: "Azmera Pizza",
-    },
-    {
-      id: "3",
-      src: "/pizza1.png",
-      title: "Margherita",
-      description: "Tomato, Mozzarella, Bell Peppers, Onions, Olives",
-      price: "150",
-      restaurantLogo: "/image1.png",
-      restaurantName: "Azmera Pizza",
-    },
-    {
-      id: "4",
-      src: "/pizza1.png",
-      title: "Margherita",
-      description: "Tomato, Mozzarella, Bell Peppers, Onions, Olives",
-      price: "150",
-      restaurantLogo: "/image1.png",
-      restaurantName: "Azmera Pizza",
-    },
-    {
-      id: "5",
-      src: "/pizza1.png",
-      title: "Margherita",
-      description: "Tomato, Mozzarella, Bell Peppers, Onions, Olives",
-      price: "150",
-      restaurantLogo: "/image1.png",
-      restaurantName: "Azmera Pizza",
-    },
-    {
-      id: "6",
-      src: "/pizza1.png",
-      title: "Margherita",
-      description: "Tomato, Mozzarella, Bell Peppers, Onions, Olives",
-      price: "150",
-      restaurantLogo: "/image1.png",
-      restaurantName: "Azmera Pizza",
-    },
-  ];
-
   return (
     <Box
       sx={{
-        paddingTop: { xs: "40px", md: "65px" },
-        paddingBottom: { xs: "50px", md: "0px" },
+        paddingTop: { xs: "0px", md: "0px" },
+        paddingBottom: { xs: "50px", md: "75px" },
         paddingInline: { xs: "10px", md: "87px" },
-        border: "2px solid blue",
         width: "100%",
         background:
           "linear-gradient(180deg, rgba(250, 126, 0, 0) 0%, rgba(250, 126, 0, 0.2) 60.5%, rgba(148, 74, 0, 0) 100%);",
@@ -123,9 +74,11 @@ export default function Fasting() {
         Fasting
       </Typography>
       <Slider className="top-restaurants" {...settings}>
-        {data.map((item) => (
-          <OrderCard item={item} key={item.id} />
-        ))}
+        {data
+          .filter((item) => item.category === "Fasting")
+          .map((item) => (
+            <OrderCard item={item} key={item.id} />
+          ))}
       </Slider>
     </Box>
   );
