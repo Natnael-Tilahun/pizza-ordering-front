@@ -48,6 +48,16 @@ body {
   overflow: hidden;
 }
 
+.related .slick-slide {
+  padding-right: 25px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.related .slick-list {
+  height: auto;
+  overflow: hidden;
+}
 
 
 @media (max-width: 768px) {
@@ -58,9 +68,17 @@ body {
   .top-restaurants .slick-list {
     margin-inline: -5px -5px;
   }
+
+  .related .slick-slide {
+    margin-inline: 0px 5px;
+  }
+
+  .related .slick-list {
+    margin-inline: -5px -5px;
+  }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 480px) {
   .top-restaurants .slick-slide {
     padding-inline: 0 0px;
     margin-inline: 0 0px;
@@ -70,6 +88,15 @@ body {
     margin-inline: 0px 0px;
     padding-inline: 0px 0px;
   }
+
+  .related .slick-slide {
+    margin-inline: 0px 10px;
+  }
+
+  .related .slick-list {
+    margin-inline: -5px -5px;
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
