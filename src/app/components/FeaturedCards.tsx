@@ -111,7 +111,6 @@ export default function FeaturedCards() {
               borderRadius: { xs: "15px", md: "40px" },
               display: "flex",
               alignItems: "center",
-              border: "2px solid red",
             }}
           >
             <Box

@@ -72,7 +72,13 @@ export const Footer = () => {
             alt="Pizza Ordering App"
             width={100}
             height={100}
-            style={{ objectFit: "contain", alignSelf: "center" }}
+            style={{
+              objectFit: "contain",
+              alignSelf: "center",
+              height: "auto",
+              width: "auto",
+            }}
+            priority={true}
           />
           <FormControl
             sx={{

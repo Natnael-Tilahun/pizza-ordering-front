@@ -1,13 +1,20 @@
+"use client";
 import React from "react";
 import { Card, CardMedia, Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 import { Pizza } from "@/types";
+import { useRouter } from "next/navigation";
 
 type Props = {
   item: Pizza;
 };
 
 export default function OrderCard({ item }: Props) {
+  const router = useRouter(); // Initialize useRouter
+
+  const handleOrderNow = () => {
+    router.push(`/pizzas/${item.id}`); // Navigate to the pizza details page
+  };
   return (
     <Card
       sx={{
@@ -124,6 +131,7 @@ export default function OrderCard({ item }: Props) {
           ) : (
             <Button
               variant="contained"
+              onClick={handleOrderNow}
               sx={{
                 width: { xs: "169px", lg: "188px" },
                 height: { xs: "56px", lg: "66px" },
